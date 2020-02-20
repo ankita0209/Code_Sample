@@ -1,0 +1,16 @@
+{
+	"auth": {
+		"cognito2422d2c2": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation"
+		}
+	},
+	"hosting": {},
+	"storage": {
+		"UserContent": {
+			"service": "S3",
+			"providerPlugin": "awscloudformation"
+		}
+	},
+	"api": {}
+}

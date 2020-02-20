@@ -1,0 +1,13 @@
+{
+    "bucketName": "securacity-user-content",
+    "authPolicyName": "s3_amplify_110932bd",
+    "unauthPolicyName": "s3_amplify_110932bd",
+    "authRoleName": {
+        "Ref": "AuthRoleName"
+    },
+    "unauthRoleName": {
+        "Ref": "UnauthRoleName"
+    },
+    "authPermissions": "rw",
+    "unauthPermissions": ""
+}

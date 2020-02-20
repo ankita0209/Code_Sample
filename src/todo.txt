@@ -1,0 +1,172 @@
+x   Get map working on dashboard page
+figure out how to handle onError images for <S3Image>
+x   render incident page data
+redo photo database images
+x	create data input for incident
+x   add date picker to dashboard
+dashboard, have function that generates year list instead of constant
+dashboard: figure out why redux isn't maintaining city list
+x   remember state on dashboard (redux store) so it doesn't reset when "back" to page
+x   router: handle protected pages there instead of inside individual pages
+
+Refactor SmartyStreets Lookup into its own component
+Refactor SS config into other app config area 
+x	Refactor Step 2 to have PersonForm as independent component (useful for add/edit later)
+fix step 2 refactor of Add new person and search after 1st entry.
+
+Step 2: handle person edit
+Step 2: handle person delete 
+Step 2: do Validation on person Submit
+Step 2: clear form on person Cancel
+Step 2: after 1 victim successfully added, clear isValidated function to go to next Step
+Step 2: see if dates can be pasted in
+Step 2: Add Smarty Streets to Lookup New Address
+Step 1: Add incident date/time?
+
+Step 3: Start work, incident date/time and report
+Step 4: Weapons
+Submit data to back-end.
+
+Remove dummy.js and router entry when done with integration.
+
+
+Smarty Streets API
+
+localhost IP: 104.189.113.137
+host key: 13000257705052277
+auth id: a41ec0fb-c13d-7f58-df9e-8d819e4dd468
+auth token: FaA7oNc1UjQ8Nntnh1CC
+
+https://us-street.api.smartystreets.com/street-address
+						?street=123+main+Schenectady+NY
+						&auth-id=8d497be5-e211-4949-a18f-0bfd1d9970d3
+						&auth-token=th4hargQiuyG7w7L7xfO
+
+https://us-autocomplete.api.smartystreets.com/lookup?key=13000257705052277&search=706+Warrington&include_only_states=NJ
+
+curl -v "https://us-autocomplete-pro.api.smartystreets.com/lookup?key=13000257705052277&search=706+Warrington&include_only_states=NJ" --referer https://104.189.113.137
+
+[
+	{"input_index":0,
+	"candidate_index":0,
+	"delivery_line_1":
+	"706 14th Ave",
+	"last_line":
+	"Paterson NJ 07504-1835",
+	"delivery_point_barcode":"075041835061",
+	"components":{
+		"primary_number":"706",
+		"street_name":"14th",
+		"street_suffix":"Ave",
+		"city_name":"Paterson",
+		"default_city_name":"Paterson",
+		"state_abbreviation":"NJ",
+		"zipcode":"07504",
+		"plus4_code":"1835",
+		"delivery_point":"06",
+		"delivery_point_check_digit":"1"
+	},
+	"metadata":{
+		"record_type":"S",
+		"zip_type":"Standard",
+		"county_fips":"34031",
+		"county_name":"Passaic",
+		"carrier_route":"C066",
+		"congressional_district":"09",
+		"rdi":"Residential",
+		"elot_sequence":"0286",
+		"elot_sort":"A",
+		"latitude":40.91603,
+		"longitude":-74.145,
+		"precision":"Zip9",
+		"time_zone":"Eastern",
+		"utc_offset":-5,
+		"dst":true
+	},
+	"analysis":{
+		"dpv_match_code":"Y",
+		"dpv_footnotes":"AABB",
+		"dpv_cmra":"N",
+		"dpv_vacant":"N",
+		"active":"N"
+	}
+}]
+
+incidentDate: "2019-11-07",
+incidentTime: "01:13",
+incidentMap: {
+	incidents: [{
+		carrier_route: "C027",
+		congressional_district: "08",
+		county: "Hudson",
+		incident_id: "new",
+		lat: 40.71344,
+		long: -74.06086,
+		vacant: "N",
+		zipcode: "07304"
+	}],
+	mapCenter: {
+		lat: 40.71344,
+		lng: -74.06086
+	}
+},
+others: [],
+policeReport: {
+	blocks: [{
+		data: {},
+		depth: 0,
+		entityRanges:[],
+		inlineStyleRanges: [],
+		key: "en647",
+		text: "test",
+		type: "unstyled"
+	}],
+	entityMap: {},
+},
+savedToCloud: false,
+selectedAddress: {
+	label: "123 1/2 Maple St Jersey City, NJ",
+	value: {
+		city: "Jersey City",
+		entries: 0,
+		secondary: "",
+		state: "NJ",
+		street_line: "123 1/2 Maple St",
+		zipcode: "07304"
+	}
+},
+suspects: [],
+victims: [{
+	address: [{
+		address: "518 pennington AVE  trenton New Jersey  "
+	}],
+	alive: "Y",
+	created_by: 1,
+	created_on: "2019-06-06 15:17:10.0",
+	dob: "1988-11-09",
+	dod: null,
+	first_name: "John",
+	gang_member: "N",
+	gender: "M",
+	last_name: "Griggs",
+	person_id: 1750,
+	person_type: "Victim",
+	race: "B",
+	sbi: "886712d",
+	sbi_issuer: "NJ"
+}],
+weapons: [{
+	ballType: ".25 cal",
+	ballisticCount: "2",
+	class: "Automatic",
+	description: "test",
+	nibin: "112135",
+	person: "",
+	person_id: 1750,
+	projectileType: "Bullet not-fired",
+	recovery_status: "Not-recovered",
+	type: "Handgun",
+	weapon_id: -1
+}]
+
+Just a note to trigger a new build.

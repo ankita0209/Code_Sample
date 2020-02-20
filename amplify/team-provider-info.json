@@ -1,0 +1,37 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "securacity-20190508143606-authRole",
+            "UnauthRoleArn": "arn:aws:iam::477854734750:role/securacity-20190508143606-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::477854734750:role/securacity-20190508143606-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "securacity-20190508143606-deployment",
+            "UnauthRoleName": "securacity-20190508143606-unauthRole",
+            "StackName": "securacity-20190508143606",
+            "StackId": "arn:aws:cloudformation:us-east-1:477854734750:stack/securacity-20190508143606/863d1a20-71c8-11e9-95c1-12c9298e4208"
+        },
+        "categories": {
+            "auth": {
+                "cognito2422d2c2": {}
+            }
+        }
+    },
+    "ankita": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-securacity-ankita-202355-authRole",
+            "UnauthRoleArn": "arn:aws:iam::477854734750:role/amplify-securacity-ankita-202355-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::477854734750:role/amplify-securacity-ankita-202355-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "amplify-securacity-ankita-202355-deployment",
+            "UnauthRoleName": "amplify-securacity-ankita-202355-unauthRole",
+            "StackName": "amplify-securacity-ankita-202355",
+            "StackId": "arn:aws:cloudformation:us-east-1:477854734750:stack/amplify-securacity-ankita-202355/4692d1f0-252b-11ea-ac06-12b94cd95a93",
+            "AmplifyAppId": "d5zey1ga5y9ph"
+        },
+        "categories": {
+            "auth": {
+                "cognito2422d2c2": {}
+            }
+        }
+    }
+}

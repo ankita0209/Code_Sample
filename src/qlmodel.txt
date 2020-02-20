@@ -1,0 +1,105 @@
+input CreateincidentInput {
+	incident_id: Int!
+    agency_id: Int!
+	address: Createaddressinput!
+    people: [Createpersoninput]!
+	incident_date: AWSDate!
+	incident_time: AWSTime!
+	premise: String!
+	gang_on_gang: String!
+	persons_known: String
+	created_by: Int!
+	narrative: String
+}
+
+type incident {
+	incident_id: Int!
+	address: address
+	people: [incidentPerson]
+	incident_date: AWSDate
+	incident_time: AWSTime
+	premise: String
+	gang_on_gang: String
+	persons_known: String
+	agency_id: Int!
+	narrative: String
+}
+
+createaddress(createaddressInput: CreateaddressInput!): address
+
+input CreateaddressInput {
+	address_id: Int!
+	lat: Float!
+	long: Float!
+	address: String!
+    secondary: String
+	city: String!
+	county: String!
+	state: String!
+	zip: String!
+	school: String!
+	created_by: Int!
+	lat_radians: Float!
+	long_radians: Float!
+	precinct: String
+	description: String
+    carrier_route: String
+    congressional_district: String
+    vacant: String
+}
+
+mutation { 
+    createAddress(input: {
+        address_id: -1
+        lat: 40.71344,
+        long: -74.06086,
+        address: "123 1/2 Maple St",
+        secondary: "",
+        city: "Jersey City",
+        county: "Hudson",
+        state: "NJ",
+        zip: "07304",
+        school: "unknown",
+        precinct: "unknown",
+        description: "",
+        carrier_route: "C027",
+        congressional_district: "08",
+        vacant: "N",
+        created_by: 1,
+        lat_radians: .71058357781,
+        long_radians: -1.2926058539
+    }) {
+        address_id
+    }
+}
+
+mutation CreateAddress { 
+    createaddress(createaddressInput: {
+        lat: 40.71344,
+        long: -74.06086,
+        address: "123 1/2 Maple St",
+        secondary: "",
+        city: "Jersey City",
+        county: "Hudson",
+        state: "NJ",
+        zip: "07304",
+        school: "U",
+        precinct: "unknown",
+        vacant: "N",
+        carrier_route: "C027",
+        congressional_district: "08",
+        lat_radians: 0.71058357781,
+        long_radians: -1.2926058539,
+        description: "",
+        created_by: 1,
+    }) {
+        address_id
+    }
+}
+
+
+
+// convert degrees to radians
+// d* (Pi/180)
+// d* (Math.pi/180)
+// d * 0.01745329251
