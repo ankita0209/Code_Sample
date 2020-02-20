@@ -117,7 +117,7 @@ class GoogleSCMap extends Component {
         */}
           <GoogleMapReact
             bootstrapURLKeys={{
-              key: "AIzaSyDURydnf6R4q6XbLZUiSMqId-o_U6ptC4U"
+              key: ""
             }}
             defaultCenter={this.props.center}
             defaultZoom={this.props.zoom}
