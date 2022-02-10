@@ -81,7 +81,7 @@
     ]
   },
   "devDependencies": {
-    "node-sass": "^4.9.4"
+    "node-sass": "^7.0.0"
   },
   "homepage": "http://securacity-dev-website-dev.s3-website-us-east-1.amazonaws.com"
 }
